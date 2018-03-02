@@ -1,4 +1,4 @@
-# Aerial system for remote spectrography of smoke pillars
+# Aerial system for remote spectrography of smoke pillars (DRAFT)
 ## Introduction
 In polish cities like Wrocław, Kraków and Katowice, pollution is a big health risk during cold months with little to no wind. Low wind results in pollutants and particles not being transported away and diffused, and instead concentrate around the areas where it originated.
 
@@ -27,6 +27,8 @@ As an educated guess, it is safe to assume that pollutants will have a different
 To maintain control and to ensure the safety of both the equipment and people, the system needs to be able to reliably hold a connection to the internet - possibly using existing 3G/4G technology. 
 ### Response in case of a faulty OAB
 In case of a fault on the OAB, a security measure should be put in place to quickly bypass the OAB when controlling the UAV. The server should periodically interface with the UAV directly, and in case of corrupted or lack of responses from the OAB, the server should maintain direct control of the UAV.
+### Who controls the UAV?
+One idea is to have the on-board computer receive commands from the server, which in turn receives it from the user side. It is unknown if the extra latency is significant at all. If so, control over the UAV should be given more directly to the user, and potentially let the on-board computer interface with the UAV to retrieve positioning data etc.
 ### On-board computer
 This component needs to be able to keep a connection using mobile networks.
 Embedded linux can be enough for the purposes of this design, as the majority of the computational work will be done serverside. The OAB should:
@@ -67,3 +69,26 @@ To send and receive data between the server and the on-board computer.
 * 006 - as a user, I want to easily mark addresses using the UAV position and the camera output for geographic pinpointing.
 * 007 - as a user, I want to use a web application for visualization and monitoring of the state of the system.
 * 008 - as a user, I want to be able to report false positives to customer support through the web interface.
+
+## Roadmap
+* Phase 1 - Planning
+* * Determined feasbility
+* * Sketch the system and map out scenarios
+* * Obtain real world spectral signatures of burning material
+* * Run simulations on test data using Octave/Matlab
+* Phase 2 - Prototyping
+* * Build a working spectrometer
+* * Interface with a Raspberry PI
+* * Run tests on data and verify that it works withing desired specs
+* Phase 3
+* * Develop an on-board computer and connect peripherals
+* * Use on-board services to interface with peripherals
+* * Build a client-server model which interfaces with on-board computer
+* * Make sure all interfaces are working
+* * Advertise to idiot beaurucrats
+* Phase 4
+* * Field testing
+* * Bug quashing
+* Phase 5
+* * Get money
+* * 
