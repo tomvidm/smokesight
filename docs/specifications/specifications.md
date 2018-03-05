@@ -1,4 +1,4 @@
-# Chimney mounted spectrography system for detecting pollutant (DRAFT)
+# Chimney mounted spectrography system for detecting pollutants (DRAFT)
 ## Introduction
 In polish cities like Wrocław, Kraków and Katowice, pollution is a big health risk during cold months with little to no wind. Low wind results in pollutants and particles not being transported away and diffused, and instead concentrate around the areas where it originated.
 
@@ -71,3 +71,12 @@ To interface with the spectrometer
 * * Get money
 * * Advertise to idiot beaurucrats in Prague or something
 * * Repeat
+
+## Ruminations
+### For the government
+As a first thought, a system like this can be a way to correlate actual air quality readings with the measurements done by these devices in a urban area. This gives the government a simple way to identify the scale of the problem. 
+
+it also gives the authorities a simple way to detect who is burning bad stuff. (Need better wording obviously.) As a result, given public awareness, this can work as a deterrent and hence lead to improved air quality. The socio-economic benefits are obvious in the form of lowered health hazard.
+
+## For cooperatives
+jaidsjoadjd
