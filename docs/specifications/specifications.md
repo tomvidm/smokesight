@@ -49,6 +49,19 @@ To interface the server and the individual devices
 #### MCU-to-spectrometer interface
 To interface with the spectrometer
 
+## user stories
+* As an end user, I want...
+* * to have a clear overview over all the devices in my "owned group" and their operational status through a simple web interface.
+* * to have a real-time reading from all the devices in my "owned group"
+* * to receive notifications about "alarms" from one of the devices in my "owned group".
+* * to be able to - using the web interface - notify authorities about "alarm" levels of "bad smoke"
+* As an admin, I want...
+* * to have overview over ALL devices, by variying degrees of geographics specificity
+* * to have access to debug information from the system and devices.
+* As a server, I want...
+* * to have all the devices be identifiable thorugh a unique ID
+* * to store information about each device, its location, aparments connected to its chimney and more
+
 ## Roadmap
 * Phase 1 - Planning
 * * Determine feasbility
