@@ -7,8 +7,32 @@ A big source of pollutant in these cities is people burning trash and organic wa
 It would be beneficial for the health and wellbeing of  the inhabitants in these (and other) urban areas to address this problem by making it easier for the authorities to detect this practice and to apprehend those responsible. This document describes one solution to this challenge.
 
 ## The solution
-A simple spectrometer will be mounted on the top of a chimney. A small energy efficient computer will be encased in a container which can withstand smoke, with wifi/mobile network connectivity. When smoke is detected, a process will run on the computer and actively monitor the spectral content of the particles. Data will be sent to a server along with the ID of the device and the data will be tested against known spectral signatures of common firewood etc. If the system determines that someone is burning non-traditional fuel in the fireplace, a notice will be sent to landlord/police.
-[some words about "cooperatives"]
+An encased [sensor system] is mounted on the edge of a chimney. Through a stable connection to a cloud server, periodic measurements are uploaded and processed to determine if the composition of detected smoke shows signs of burning organic waste. If detected, the location and ID of the observing device will be sent with a notification to the [relevant audience].
+
+## Description of system
+The chimney mounted device consists of a microcontroller board, with peripheral connectivity devices and sensors. It is encased in such a way to let the system withstand varied environmental conditions such as rain, snow, hot and cold.
+
+On one roof, there can be several devices. Each of these will be interconnected using a local wireless low-power network solution. (LPWAN / Bluetooth) One of these will be equipped with the ability to connect to a mobile network and function as an aggregator for the rest, including itself.
+
+Readings from sensors will periodically be uploaded to a server located in the cloud. The server hosts services responsible for periodically pinging the remote devices, by their IDs, for data. The server will take these readings and process them to determine the presence of [bad smoke].
+
+Detection of [bad smoke] will trigger a message to be sent to the [relevant audience].
+
+The server will also host a database of professionally obtained data for which the decision making process can compare readings with.
+
+In addition, a web interface can be provided to give real time data to the [relevant audience]. This interface will also show the devices along with their geographical data and the possible apartments that is connected through the chimney in question.
+
+## Description of the sensor solution candidates
+### Spectral analysis
+Simple but possible expensive way to differ gases and particel clouds with different compositions.
+### 
+
+## Description of decision making
+### If spectral analysis is feasible
+Keep a database of spectral readings of real smoke and pollutant emmisions and use this data to compare them with the measured reading. If the spectral content differs to a large degree from that of burning firewood, newspapers and pellets (etc), it can be assumed that something else is burning. 
+
+### If spectral analysis is non-feasible
+Hmmmmmmmm
 
 ## Design considerations
 ### Division of the systems
@@ -16,17 +40,21 @@ The logical split between the subsystems would be the following
 
 * Chimney mounted system
 * * Special purpose computer
-* * Spectrometer
+* * Sensor
 * Server
 * * Algorithms and decision making
 * * Database
 * Client
 * * Web interface
 
+### Cost-effective sensors for mass distribution
+Spectrometers are prohibitively expensive. An alternative method of detecting high concentrations of pollutants will be needed.
 ### Detecting spectral signatures
 As an educated guess, it is safe to assume that pollutants will have a different electromagnetic profile than that of firewood and other common items used for fireplaces. Based on this, there is a possibility that the hardware required to reliably detect pollutants does not need to be specialized, as  we would only be required to rule out common fireplace fuel rather than detecting specific pollutants. This can greatly reduce the time needed to collect data, but would require extra consideration of the decision making process to avoid false positives.
 ### Connectivity
 The system needs to be able to reliably hold a connection to the internet - possibly using existing 3G/4G technology.
+
+However, in places with ridiculous chimney density, this might be taxing on the capacity of mobile networks, so a simpler system between nearby devices and one to aggregate this to a mobile network can be more feasible - and a lot cheaper.
 ### Sensor system
 The system needs to be able to measure the spectral signature in a narrow cone in a wide band. The spectral band of interest will include the visible spectrum, but also UV and IR. The exact dimensions must be determined based on real data.
 
@@ -36,6 +64,9 @@ If the assumption about spectral signatures being distinct enough to avoid false
 ### Power requirements
 If the system is to consist of a stationary unit mounted on chimneys, it would be impractical to require the user to periodically replace a battery. Using a low power computer and small solar cells, the system can be independent from manual powering.
 ## Requirements
+### Safety and lifetime
+#### Environmental durability
+#### Power supply
 ### Hardware
 #### Sensor
 #### MCU / Small computer
